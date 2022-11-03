@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Disney | Venha participar da Diversão!</title>
+  </head>
+
+  <body>
+    <div class="navigation">
+      <div id="navigation_container">
+        <img class="logo" src="imagem/logo.svg" />
+        <ul>
+          <li><a class="menu" href="index.html" class="topbar_menu_1">Inicio</a></li>
+          <li><a class="menu" href="#" class="topbar_menu_1">Parque</a></li>
+          <li><a class="menu" href="#" class="topbar_menu_1">Hospedagem</a></li>
+          <li><a class="menu" href="#" class="topbar_menu_1">Loja</a></li>
+          <li><a class="menu" href="contato.html" class="topbar_menu_1">Contato</a></li>
+          <li><a class="menu" href="ToDoList.html" class="topbar_menu_1">To Do List</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section>
+        <div class="contato">
+          <h3>Tem dúvida? Venha fale conosco!</h3>
+          <div class="formulario">
+          <h4>Preencha o formulário abaixo e deixe sua dúvida, vamos lá!</h4>
+          <form method="formulario_1">
+            <div class="txt">
+              <input type="name" required>
+                <span></span>
+                <label>Nome</label>
+            </div>
+            <div class="txt">
+              <input type="email" required>
+              <span></span>
+              <label>E-mail</label>
+            </div>
+            <div class="comentario">
+              <textarea
+                id="msg"
+                name="cadastro"
+                rows="5"
+                cols="50"
+                placeholder="Coloque a mensagem aqui"
+              ></textarea>
+            </div>
+            
+            <div id="enviar_button_container"></div>
+  
+          </form>
+          <div class="duvida">
+            <p>Em caso de dúvidas sobre viagem, entre em contato com:</p>
+          </div>
+          <div class="email">
+            <a href="mailto:ananda.elias@email.com">ananda.elias@email.com</a>
+          </div>
+        </div>
+      </section>
+      </main>
+  
+      <footer>
+        <div>
+          <div class="footer">
+            <p>© Copyright 2022. Disney</p>
+          </div>
+        </div>
+      </footer>
+  
+      <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  
+      <script type="text/javascript">
+        const e = React.createElement;
+        class EnviarButton extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { enviar: false};
+          }
+          render () {
+            if(this.state.enviar){
+              return 'Enviou!';
+            }
+            return e('button', {
+              onClick: () => {this.setState({ enviar: true}); }
+            }, 'Enviar');
+          }
+        }
+  
+  const domContainer = document.querySelector('#enviar_button_container');
+  ReactDOM.render(e(EnviarButton), domContainer);
+  
+      </script>
+    </body>
+  </html>
+     
