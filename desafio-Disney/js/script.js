@@ -1,6 +1,8 @@
 let addToDoButton = document.getElementById('addlist');
 let toDoContainer = document.getElementById('toDoContainer');
 let inputField = document.getElementById('inputField');
+let count = 1;
+document.getElementById("radio1").checked = true;
 
 addToDoButton.addEventListener('click', function(){
     var paragraph = document.createElement('p');
@@ -19,3 +21,15 @@ addToDoButton.addEventListener('click', function(){
         }
     })
 })
+
+setInterval( Function(){
+    nextImagem();
+}, 5000)
+
+function nextImagem(){
+    count++
+    if(count>4){
+        count=1;
+    }
+    document.getElementById("radio"+count).checked=true;
+}
