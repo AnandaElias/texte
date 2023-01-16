@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Disney | Venha participar da Diversão!</title>
+  </head>
+
+  <body>
+    <div class="navigation">
+      <div id="navigation_container">
+        <img class="logo" src="imagem/logo.svg" />
+        <ul>
+          <li><a class="menu" href="index.html" class="topbar_menu_1">Inicio</a></li>
+          <li><a class="menu" href="loja.html" class="topbar_menu_1">Loja</a></li>
+          <li><a class="menu" href="contato.html" class="topbar_menu_1">Contato</a></li>
+          <li><a class="menu" href="ToDoList.html" class="topbar_menu_1">To Do List</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section>
+        <div class="contato">
+          <h3>Tem dúvida? Venha fale conosco!</h3>
+
+          <div class="formulario">
+          <h4>Preencha o formulário abaixo e deixe sua dúvida, vamos lá!</h4>
+          
+          <form method="formulario_1" class="form-column">
+            <div class="txt">
+              <input type="name" required>
+                <span></span>
+                <label>Nome</label>
+            </div>
+
+            <div class="txt">
+              <input type="email" required>
+              <span></span>
+              <label>E-mail</label>
+            </div>
+
+            <div class="nascimento">
+              <label>Informe a data do seu nascimento:</label>
+            <input type="date" name="nascimentoo">
+            </div>
+        
+            <div class="estadocivil-row">
+              <div class="estadocivil">
+                <label for="civil">Estado civil:</label>
+              </div>
+              <div class="estadocivil1">
+                <ul class="list-ec">
+                    <li><input class="ec-input" type="radio" name="estadocivil" value="solteiro">Solteiro</li>
+                    <li><input class="ec-input" type="radio" name="estadocivil" value="casado">Casado</li>
+                    <li><input class="ec-input" type="radio" name="estadocivil" value="divorciado">Divorciado</li>
+                    <li><input class="ec-input" type="radio" name="estadocivil" value="viuvo">Viúvo</li>
+                  </ul>
+              </div>
+            </div>
+              
+              <div class="estados">
+                <label for="estado">Em que estado do Brasil você mora?</label>
+                <select id="UF" name="UF">
+                  <option value="">Selecione</option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espirito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+          </select>
+        </div>
+            <div class="comentario">
+              <textarea
+                id="msg"
+                name="cadastro"
+                rows="5"
+                cols="50"
+                placeholder="Coloque a mensagem aqui"></textarea>
+            </div>
+            
+            <div id="enviar_button_container"></div>
+  
+          </form>
+          <div class="duvida">
+            <p>Em caso de dúvidas sobre viagem, entre em contato com:</p>
+          </div>
+          <div class="email">
+            <a href="mailto:ananda.elias@email.com">ananda.elias@email.com</a>
+          </div>
+        </div>
+      </section>
+      </main>
+  
+      <footer>
+        <div>
+          <div class="footer">
+            <p>© Copyright 2023. Disney</p>
+          </div>
+        </div>
+      </footer>
+  
+      <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  
+      <script type="text/javascript">
+        const e = React.createElement;
+        class EnviarButton extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { enviar: false};
+          }
+          render () {
+            if(this.state.enviar){
+              return 'Enviou!';
+            }
+            return e('button', {
+              onClick: () => {this.setState({ enviar: true}); }
+            }, 'Enviar');
+          }
+        }
+  
+  const domContainer = document.querySelector('#enviar_button_container');
+  ReactDOM.render(e(EnviarButton), domContainer);
+  
+      </script>
+    </body>
+  </html>
+     
